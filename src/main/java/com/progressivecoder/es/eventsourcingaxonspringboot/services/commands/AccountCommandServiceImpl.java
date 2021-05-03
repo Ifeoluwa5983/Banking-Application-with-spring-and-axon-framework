@@ -23,7 +23,7 @@ public class AccountCommandServiceImpl implements AccountCommandService {
 
     @Override
     public CompletableFuture<String> createAccount(AccountCreateDTO accountCreateDTO) {
-        return commandGateway.send(new CreateAccountCommand(UUID.randomUUID().toString(), accountCreateDTO.getStartingBalance(), accountCreateDTO.getCurrency()));
+        return commandGateway.send(new CreateAccountCommand(UUID.randomUUID().toString(), accountCreateDTO.getStartingBalance(), accountCreateDTO.getCurrency(), accountCreateDTO.getLastName(), accountCreateDTO.getFirstName()));
     }
 
     @Override
